@@ -227,7 +227,7 @@ export const experience: TimelineEntry[] = [
   {
     period: "Sept 2026",
     role: "Web Developer",
-    org: "Zac Attack",
+    org: "Zac Attack Grooming",
     points: [
       "Designed and developed a responsive, mobile-optimized website using modern front-end practices.",
       "Managed source code on GitHub and deployed to Cloudflare Workers with a custom domain.",
