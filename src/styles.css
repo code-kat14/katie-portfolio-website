@@ -1,0 +1,160 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — bold editorial dark.
+ * Deep plum base, bright magenta primary, tangerine + mint accents.
+ * All colors are tokens. Never hardcode hex values in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-lime: var(--lime);
+  --color-hot: var(--hot);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Deep plum base */
+  --background: #24152F;
+  --foreground: #FFE4EC;
+  --card: #301a3f;
+  --card-foreground: #FFE4EC;
+  --popover: #301a3f;
+  --popover-foreground: #FFE4EC;
+
+  /* Bright magenta */
+  --primary: #E83E8C;
+  --primary-foreground: #24152F;
+
+  --secondary: #301a3f;
+  --secondary-foreground: #FFE4EC;
+
+  --muted: #3d234f;
+  --muted-foreground: #e8c8d8;
+
+  /* Tangerine */
+  --accent: #FF7A45;
+  --accent-foreground: #24152F;
+
+  /* Light mint + bright magenta */
+  --lime: #B9F3E4;
+  --hot: #E83E8C;
+
+  --destructive: #FF7A45;
+  --destructive-foreground: #24152F;
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: #B9F3E4;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+}
+
+/* Frosted panel used across sections */
+@utility panel {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-foreground) 7%, transparent),
+    color-mix(in oklab, var(--color-foreground) 3%, transparent)
+  );
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Scroll reveal */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animated underline for text links */
+@utility link-underline {
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  transition: background-size 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
