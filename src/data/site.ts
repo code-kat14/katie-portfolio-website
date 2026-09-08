@@ -19,10 +19,10 @@ export const profile = {
   lastName: "Nino",
   fullName: "Katie Nino",
   initials: "KN",
-  headline: "Building better digital experiences, organized operations, and practical business solutions.",
-  badge: "Hands-on · Adaptable · Detail-driven",
+  headline: "Improving Business Operations and Customer Experience Through Practical Solutions.",
+  badge: "Hands-on · Adaptable · Tech Savvy · AI forward",
   intro:
-    "I take projects from idea to launch. From online stores, business websites, and the day-to-day operations that keep them running. Ten years of leading service teams taught me how a business actually feels to a customer. I won't come to you with problems, I'll come to you with solutions.",
+    "I take projects from idea to launch. From online stores, business websites, and the day-to-day operations that keep your business running. Ten years of leading service teams taught me how a business actually feels to a customer. I won't come to you with problems, I'll come to you with solutions.",
   email: "katie.data0@gmail.com",
   phone: "602-228-4458",
   github: "https://github.com/code-kat14",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   {
     id: "zac-attack",
     number: "02",
-    name: "Zac Attack",
+    name: "Zac Attack Grooming",
     category: "Small Business Website",
     tags: ["Website Design", "Small Business", "Mobile Experience", "Branding", "Digital Presence"],
     summary:
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       "A responsive, mobile-optimized site live on its own domain, tested across both the custom domain and the workers.dev URL.",
     learned:
       "Deployment is its own skill. DNS propagation, domain parking, and hosting configuration all had to be diagnosed and fixed before the site truly worked.",
-    note: "Built for new and upcoming groomiing business. Role: Web Developer, Sept 2026.",
+    note: "Built for new and upcoming grooming business. Role: Web Developer, Sept 2026.",
     image: websiteImage,
     imageAlt: "Zac Attack Grooming website displayed on a laptop and phone beside a dog",
     primaryLink: { label: "View Live Website", href: "https://zacattackgrooming.com/" },
